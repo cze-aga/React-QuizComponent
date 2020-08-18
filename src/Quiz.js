@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import QuizQuestion from "./QuizQuestion.js";
 
 class Quiz extends React.Component {
   constructor(props) {
@@ -10,7 +11,10 @@ class Quiz extends React.Component {
   render() {
     return (
       <div className="QuizQuestion">
-        {quizData.quiz_questions[0].instruction_text}
+        <QuizQuestion
+          instruction_text={quizData.quiz_questions[0].instruction_text}
+          quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]}
+        />
       </div>
     );
   }
