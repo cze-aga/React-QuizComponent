@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class QuizQuestionButton extends React.Component {
-  render(props) {
+  render() {
     return (
       <li>
         <button>{this.props.buttonText}</button>
