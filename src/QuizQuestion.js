@@ -14,8 +14,9 @@ class QuizQuestion extends React.Component {
       this.setState({ incorrectAnswer: false });
 
       this.props.showNextQuestionHandler();
+    } else {
+      this.setState({ incorrectAnswer: true });
     }
-    this.setState({ incorrectAnswer: true });
   }
 
   render() {
@@ -23,7 +24,9 @@ class QuizQuestion extends React.Component {
       <main>
         {this.state.incorrectAnswer ? (
           <p className="error">Sorry, that's not right</p>
-        ) : null}
+        ) : (
+          <p></p>
+        )}
         <section>
           <p>{this.props.quiz_question.instruction_text}</p>
         </section>
