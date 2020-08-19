@@ -4,9 +4,9 @@ import QuizQuestionButton from "./QuizQuestionButton.js";
 class QuizQuestion extends React.Component {
   constructor(props) {
     super(props);
-    this.setState({
+    this.state = {
       incorrectAnswer: false,
-    });
+    };
   }
 
   handleClick(button_text) {
