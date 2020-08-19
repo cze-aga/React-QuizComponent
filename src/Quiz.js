@@ -16,13 +16,19 @@ class Quiz extends React.Component {
     });
   }
 
+  handleResetClick() {
+    this.setState({
+      quiz_position: 1,
+    });
+  }
+
   render() {
     const isQuizEnd =
       this.state.quiz_position - 1 === quizData.quiz_questions.length;
     return (
       <div className="QuizQuestion">
         {isQuizEnd ? (
-          <QuizEnd />
+          <QuizEnd resetClickHandler={this.handleResetClick.bind(this)} />
         ) : (
           <QuizQuestion
             instruction_text={quizData.quiz_questions[0].instruction_text}
